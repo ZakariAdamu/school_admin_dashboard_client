@@ -58,13 +58,18 @@ const AdminPage = () => {
 				{/* ICONS AND USER */}
 				<div className="flex items-center w-full justify-end">
 					<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
-						<Image src="/message.png" alt="chat-icon" width={20} height={20} />{" "}
+						<Image
+							src="/notification.png"
+							alt="notification-icon"
+							width={20}
+							height={20}
+						/>{" "}
 					</div>
 
 					<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
 						<Image
-							src="/announcement.png"
-							alt="chat-icon"
+							src="/settings.png"
+							alt="settings-icon"
 							width={20}
 							height={20}
 						/>{" "}
@@ -73,7 +78,7 @@ const AdminPage = () => {
 						</div>
 					</div>
 					<div className="flex flex-col">
-						<span className="text-xs leading-3 font-medium">John Doe</span>
+						<span className="text-xs leading-3 font-medium">Nabila A.</span>
 						<span className="text-[10px] text-gray-500 text-right">Admin</span>
 					</div>
 					<Image
