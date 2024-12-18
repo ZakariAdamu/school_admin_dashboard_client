@@ -21,11 +21,13 @@
 	border: none !important;
 	width: auto !important; /* width: auto also allows the content fits its parent container*/
 	line-height: 1.8rem !important;
-	/* font-size: 1rem !important; */
 }
 .react-calendar__tile {
 	font-size: 1rem !important;
 	width: 50px !important;
+	margin-inline: auto !important;
+	padding-left: 2px !important;
+	padding-right: 2px !important;
 }
 .react-calendar__tile--active {
 	background-color: #303972 !important;
