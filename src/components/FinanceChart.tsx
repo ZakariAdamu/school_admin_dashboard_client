@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import {
-	LineChart,
-	Line,
+	BarChart,
+	Bar,
+	Rectangle,
 	XAxis,
 	YAxis,
 	CartesianGrid,
@@ -14,121 +15,73 @@ import {
 
 const data = [
 	{
-		name: "Jan",
-		expense: 4000,
-		income: 2400,
+		name: "Mon",
+		present: 40,
+		absent: 24,
 	},
 	{
-		name: "Feb",
-		expense: 3000,
-		income: 1398,
+		name: "Tues",
+		present: 30,
+		absent: 13,
 	},
 	{
-		name: "Mar",
-		expense: 2000,
-		income: 9800,
+		name: "Wed",
+		present: 20,
+		absent: 8,
 	},
 	{
-		name: "PApr",
-		expense: 2780,
-		income: 3908,
+		name: "Thurs",
+		present: 27,
+		absent: 11,
 	},
 	{
-		name: "May",
-		expense: 1890,
-		income: 4800,
-	},
-	{
-		name: "Jun",
-		expense: 2390,
-		income: 3800,
-	},
-	{
-		name: "July",
-		expense: 3490,
-		income: 4300,
-	},
-	{
-		name: "Aug",
-		expense: 3490,
-		income: 4300,
-	},
-	{
-		name: "Sept",
-		expense: 3490,
-		income: 4300,
-	},
-	{
-		name: "Oct",
-		expense: 3490,
-		income: 4300,
-	},
-	{
-		name: "Nov",
-		expense: 3490,
-		income: 4300,
-	},
-	{
-		name: "Dec",
-		expense: 3490,
-		income: 4300,
+		name: "Fri",
+		present: 18,
+		absent: 8,
 	},
 ];
 
 const FinanceChart = () => {
 	return (
-		<div className="bg-white rounded-xl w-full h-full p-4">
-			{/* TITLE */}
+		<div className="bg-white rounded-lg p-6 h-full">
 			<div className="flex justify-between items-center">
-				<h1 className="text-lg font-semibold">Finance</h1>
+				<h1 className="text-lg font-semibold">School Finance</h1>
 				<Image src="/moreDark.png" alt="" width={20} height={20} />
 			</div>
-
 			<ResponsiveContainer width="100%" height="90%">
-				<LineChart
-					width={500}
-					height={300}
-					data={data}
-					margin={{
-						top: 5,
-						right: 30,
-						left: 20,
-						bottom: 5,
-					}}
-				>
-					<CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
+				<BarChart width={500} height={300} data={data} barSize={20}>
+					<CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#ddd" />
 					<XAxis
 						dataKey="name"
 						axisLine={false}
 						tick={{ fill: "#d1d5db" }}
 						tickLine={false}
-						tickMargin={10}
 					/>
-					<YAxis
-						axisLine={false}
-						tick={{ fill: "#d1d5db" }}
-						tickLine={false}
-						tickMargin={20}
+					<YAxis axisLine={false} tick={{ fill: "#d1d5db" }} tickLine={false} />
+					<Tooltip
+						contentStyle={{
+							borderRadius: "10px",
+							borderColor: "lightgray",
+						}}
 					/>
-					<Tooltip />
 					<Legend
-						align="center"
+						align="left"
 						verticalAlign="top"
-						wrapperStyle={{ paddingTop: "10px", paddingBottom: "30px" }}
-					/>{" "}
-					<Line
-						type="monotone"
-						dataKey="income"
-						stroke="#C3EBFA"
-						strokeWidth={5}
+						wrapperStyle={{ paddingTop: "20px", paddingBottom: "40px" }}
 					/>
-					<Line
-						type="monotone"
-						dataKey="expense"
-						stroke="#CFCEFF"
-						strokeWidth={5}
+					<Bar
+						dataKey="present"
+						fill="#FAE27C"
+						legendType="circle"
+						radius={[5, 5, 0, 0]}
 					/>
-				</LineChart>
+					<Bar
+						dataKey="absent"
+						fill="#C3EBFA"
+						legendType="circle"
+						radius={[5, 5, 0, 0]}
+					/>
+				</BarChart>
 			</ResponsiveContainer>
 		</div>
 	);

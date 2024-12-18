@@ -1,19 +1,49 @@
-import Image from "next/image";
+// import Image from "next/image";
 
-const Navbar = () => {
-	return (
-		<div className="flex items-center justify-between p-4">
-			{/* SEARCH BAR */}
-			<div className="hidden md:flex items-center gap-2 text-xs rounded-full ring-[1.5px] ring-gray-300 px-2">
+// const Navbar = () => {
+// 	return (
+// <div className="flex items-center bg-[#fff] justify-between p-4 my-3">
+
+{
+	/*** LEFT ***/
+}
+{
+	/* former navbar left */
+}
+{
+	/* <div className="flex justify-end items-center"> */
+}
+{
+	/* Page Title */
+}
+{
+	/* <div className="hidden md:flex items-center font-bold text-3xl text-jodnaPurple1 px-2">
+					<h2>Dashboard</h2>
+				</div>
+			</div> */
+}
+
+{
+	/* SEARCH BAR */
+}
+{
+	/* <div className="hidden md:flex items-center bg-white justify-end gap-2 ml-[40rem] text-xs rounded-full ring-[1.5px] ring-white px-2">
 				<Image src="/search.png" alt="search-icon" width={14} height={14} />
 				<input
 					type="text"
-					placeholder="Search..."
-					className="w-[200px] p-2 bg-transparent outline-none"
+					placeholder="Search here..."
+					className="w-[200px] p-2 outline-none"
 				/>
-			</div>
-			{/* ICONS AND USER */}
-			<div className="flex items-center w-full justify-end">
+			</div> */
+}
+{
+	/***  RIGHT  ***/
+}
+{
+	/* ICONS AND USER */
+}
+{
+	/* <div className="flex items-center w-full justify-end">
 				<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
 					<Image src="/message.png" alt="chat-icon" width={20} height={20} />{" "}
 				</div>
@@ -40,9 +70,13 @@ const Navbar = () => {
 					height={36}
 					className="rounded-full"
 				/>
-			</div>
-		</div>
-	);
-};
+			</div> */
+}
 
-export default Navbar;
+{
+	/* </div> */
+}
+// 	);
+// };
+
+// export default Navbar;
