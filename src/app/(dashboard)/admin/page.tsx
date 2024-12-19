@@ -6,6 +6,7 @@ import PerformanceChart from "@/components/PerformanceChart";
 import UserCard from "@/components/UserCard";
 import Image from "next/image";
 import React from "react";
+import TopBar from "@/components/TopBar";
 
 const AdminPage = () => {
 	return (
@@ -55,41 +56,8 @@ const AdminPage = () => {
 			</div>
 			{/* RIGHT */}
 			<div className="w-full lg:w-1/3 flex flex-col gap-8 bg-white">
-				{/* ICONS AND USER */}
-				<div className="flex items-center w-full justify-end">
-					<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer">
-						<Image
-							src="/notification.png"
-							alt="notification-icon"
-							width={20}
-							height={20}
-						/>{" "}
-					</div>
-
-					<div className="bg-white rounded-full w-7 h-7 flex items-center justify-center cursor-pointer relative">
-						<Image
-							src="/settings.png"
-							alt="settings-icon"
-							width={20}
-							height={20}
-						/>{" "}
-						<div className="absolute -top-3 -right-3 w-5 h-5 flex items-center justify-center bg-purple-500 text-white rounded-full text-xs">
-							1
-						</div>
-					</div>
-					<div className="flex flex-col">
-						<span className="text-xs leading-3 font-medium">Nabila A.</span>
-						<span className="text-[10px] text-gray-500 text-right">Admin</span>
-					</div>
-					<Image
-						src="/avatar.png"
-						alt="user-avatar"
-						width={36}
-						height={36}
-						className="rounded-full"
-					/>
-				</div>
-				{/* <EventCalendar /> */}
+		
+				<TopBar />
 				<Announcements />
 			</div>
 		</div>
