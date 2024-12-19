@@ -12,7 +12,7 @@ type Value = ValuePiece | [ValuePiece, ValuePiece];
 const SchoolCalendar = () => {
 	const [value, onChange] = useState<Value>(new Date());
 	return (
-		<div className="bg-white rounded-lg p-6 h-full">
+		<div className="bg-white rounded-lg px-5 py-6 h-full">
 			<div className="flex justify-between items-center">
 				<h1 className="text-lg font-semibold">School Calendar</h1>
 			</div>

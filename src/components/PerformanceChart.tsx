@@ -92,7 +92,7 @@ const data = [
 
 const PerformanceChart = () => {
 	return (
-		<div className="bg-white rounded-xl w-full h-full p-4">
+		<div className="bg-white rounded-xl w-full h-full pt-4 px-4 pb-10">
 			{/* TITLE */}
 			<div className="flex justify-between items-center mb-5">
 				<h1 className="text-lg font-semibold text-jodnaPurple1">
@@ -137,7 +137,7 @@ const PerformanceChart = () => {
 						bottom: 5,
 					}}
 				>
-					<CartesianGrid strokeDasharray="3 3" stroke="#ddd" />
+					<CartesianGrid strokeDasharray="1 1" horizontal={false} stroke="#ddd" />
 					<XAxis
 						dataKey="name"
 						axisLine={false}
