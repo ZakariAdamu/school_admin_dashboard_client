@@ -4,40 +4,40 @@ import StudentCard from "./StudentCard";
 let viewedProfile;
 const recentStudents = [
 	{
-		avatar: "/avatar2.png",
 		_id: "1",
+		avatar: "/avatar2.png",
 		fullName: "Samantha William",
 		class: "Class VII A",
 		icon: "/mail-button.png",
 		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
 	},
 	{
-		avatar: "/avatar2.png",
 		_id: "2",
+		avatar: "/avatar2.png",
 		fullName: "Tony Soap",
 		class: "Class VII A",
 		icon: "/mail-button.png",
 		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
 	},
 	{
-		avatar: "/avatar2.png",
 		_id: "3",
+		avatar: "/avatar2.png",
 		fullName: "Karen Hope",
 		class: "Class VII A",
 		icon: "/mail-button.png",
 		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
 	},
 	{
-		avatar: "/avatar2.png",
 		_id: "4",
+		avatar: "/avatar2.png",
 		fullName: "Jordan Nico",
 		class: "Class VII B",
 		icon: "/mail-button.png",
 		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
 	},
 	{
-		avatar: "/avatar2.png",
 		_id: "5",
+		avatar: "/avatar2.png",
 		fullName: "Nadila Adja",
 		class: "Class VII A",
 		icon: "/mail-button.png",

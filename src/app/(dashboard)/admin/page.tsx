@@ -3,7 +3,7 @@ import FinanceChart from "@/components/FinanceChart";
 // import CountChart from "@/components/CountChart";
 import SchoolCalendar from "@/components/SchoolCalendar";
 import PerformanceChart from "@/components/PerformanceChart";
-import UserCard from "@/components/UserCard";
+import UserCard from "@/components/DashboardSummary";
 import Image from "next/image";
 import React from "react";
 import TopBar from "@/components/TopBar";

@@ -1,6 +1,6 @@
 import React from "react";
 import RecentStudents from "./RecentStudents";
-import Messages from "./Messages";
+import Messages from "./MessageList";
 import CurrentFoodsMenu from "./CurrentFoodsMenu";
 
 const Announcements = () => {
