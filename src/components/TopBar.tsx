@@ -24,15 +24,15 @@ const TopBar = () => {
 						height={30}
 					/>{" "}
 				</div>
-				<div className="flex flex-col mr-4">
+				<div className="flex flex-col items-end mr-5">
 					<span className="text-xs leading-3 font-medium">Nabila A.</span>
-					<span className="text-[10px] text-gray-500 text-right">Admin</span>
+					<span className="text-[10px] text-gray-500 pr-1">Admin</span>
 				</div>
 				<Image
-					src="/avatar.png"
+					src="/avatar2.png"
 					alt="user-avatar"
-					width={36}
-					height={36}
+					width={50}
+					height={50}
 					className="rounded-full"
 				/>
 			</div>

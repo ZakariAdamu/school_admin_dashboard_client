@@ -1,45 +1,81 @@
-import React from 'react'
+import Image from "next/image";
+import StudentCard from "./StudentCard";
+
+let viewedProfile;
+const recentStudents = [
+	{
+		avatar: "/avatar2.png",
+		_id: "1",
+		fullName: "Samantha William",
+		class: "Class VII A",
+		icon: "/mail-button.png",
+		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
+	},
+	{
+		avatar: "/avatar2.png",
+		_id: "2",
+		fullName: "Tony Soap",
+		class: "Class VII A",
+		icon: "/mail-button.png",
+		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
+	},
+	{
+		avatar: "/avatar2.png",
+		_id: "3",
+		fullName: "Karen Hope",
+		class: "Class VII A",
+		icon: "/mail-button.png",
+		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
+	},
+	{
+		avatar: "/avatar2.png",
+		_id: "4",
+		fullName: "Jordan Nico",
+		class: "Class VII B",
+		icon: "/mail-button.png",
+		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
+	},
+	{
+		avatar: "/avatar2.png",
+		_id: "5",
+		fullName: "Nadila Adja",
+		class: "Class VII A",
+		icon: "/mail-button.png",
+		backgroundColor: viewedProfile ? "bg-white" : "bg-jodnaPurple1", // state variable: viewedProfile
+	},
+];
 
 const RecentStudents = () => {
-  return (
+	return (
 		<>
+			{/* Recent Students section header */}
 			<div className="bg-white p-4 rounded-md">
-				<div className="flex items-center justify-between">
-					<h1 className="text-xl font-semibold">Recent Students</h1>
-					<span className="text-xs text-gray-400">+ Add student</span>
+				<div className="flex justify-between items-center">
+					<div className="flex flex-col items-start">
+						<h2 className="capitalize font-bold text-2xl text-jodnaPurpleText">
+							Recent Students
+						</h2>
+						<p className="text-sm font-semibold student-total">
+							You have 456 students
+						</p>
+					</div>
+					<button className="rounded-full p-4 bg-jodnaPurple2">
+						<Image src="/white-plus.png" width={12} height={12} alt="" />
+					</button>
 				</div>
-				<div className="flex flex-col gap-4 mt-4">
-					<div className="bg-aishubSkyLight rounded-md p-4">
-						<div className="flex items-center justify-between">
-							<h2 className="font-medium">Samantha William</h2>
-							<span className="text-xs text-gray-400 bg-white rounded-md p-1">
-								Message icon
-							</span>
-						</div>
-						<p className="text-sm text-gray-400 mt-1">Class VII A</p>
-					</div>
-					<div className="bg-white rounded-md p-4">
-						<div className="flex items-center justify-between">
-							<h2 className="font-medium"> Tony Soap</h2>
-							<span className="text-xs text-gray-400 bg-white rounded-md p-1">
-								Message icon
-							</span>
-						</div>
-						<p className="text-sm text-gray-400  mt-1">Class VII A</p>
-					</div>
-					<div className="bg-white rounded-md p-4">
-						<div className="flex items-center justify-between">
-							<h2 className="font-medium">Karen Hope</h2>
-							<span className="text-xs text-gray-400 bg-white rounded-md p-1">
-								Message icon
-							</span>
-						</div>
-						<p className="text-sm text-gray-400 mt-1">Class VII A</p>
-					</div>
+
+				{/* Students Card */}
+				<div className="mt-8">
+					{recentStudents.map((student: StudentType) => (
+						<StudentCard key={student._id} student={student} />
+					))}
+					<button className="block w-full max-w-[335px] mt-7 mx-auto capitalize text-lg font-bold text-jodnaPurpleText bg-jodnaBgButton px-2 py-4 rounded-full hover:bg-slate-300">
+						view more
+					</button>
 				</div>
 			</div>
 		</>
 	);
-}
+};
 
-export default RecentStudents
+export default RecentStudents;

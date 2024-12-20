@@ -50,8 +50,8 @@ const UserCard = () => {
 					<div className="flex flex-col items-center">
 						<h2 className="capitalize text-sm font-medium text-gray-500">
 							{user.label}
-							<h1 className="text-2xl font-semibold">{user.total}</h1>
 						</h2>
+						<h1 className="text-2xl font-semibold">{user.total}</h1>
 					</div>
 				</div>
 			))}

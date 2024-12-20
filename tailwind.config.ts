@@ -24,6 +24,7 @@ const config: Config = {
 				jodnaGray1: "#F5F5F5",
 				jodnaGray2: "#C1BBEB",
 				jodnaGray3: "#A098AE",
+				jodnaBgButton: "#4D44B51A",
 				aishubSky: "#C3EBFA",
 				aishubSkyLight: "#EDF9FD",
 				aishubPurple: "#CFCEFF",
