@@ -7,26 +7,28 @@ interface MessageCardProps {
 const MessageCard = ({ message }: MessageCardProps) => {
 	return (
 		<>
-			<div className="flex justify-between items-center my-3">
-				<div className="rounded-full p-3 -ml-3">
-					<Image
-						src={message.avatar}
-						width={45}
-						height={40}
-						className="rounded-full"
-						alt="user avatar"
-					/>
-				</div>
-				<div className="flex flex-col items-start justify-center">
-					<h2 className="capitalize text-base font-semibold ">
+			<div className="flex flex-col justify-center gap-6 w-full items-center my-3">
+				<div className="flex w-full items-center justify-start">
+					<div className="rounded-full mr-2">
+						<Image
+							src={message.avatar}
+							width={40}
+							height={40}
+							className="rounded-full"
+							alt="user avatar"
+						/>
+					</div>
+					<h2 className="capitalize text-sm font-semibold -mt-4 mr-6 ">
 						{message.fullName}
 					</h2>
-					<h1 className="text-sm font-medium text-jodnaGray2">
-						{message.messageBody}
-					</h1>
+					<p className="text-xs text-jodnaGray2 -mt-4 flex-item-right">
+						12:45 PM
+					</p>
 				</div>
-				<div className="text-xs block mx-auto -mt-7 text-jodnaGray2">
-					<p className="">12:45 PM</p>
+				<div className="text-[10px] -mt-9 text-jodnaGray2">
+					<p className="text-xs font-medium text-jodnaGray2">
+						{message.messageBody}
+					</p>
 				</div>
 			</div>
 			<hr />

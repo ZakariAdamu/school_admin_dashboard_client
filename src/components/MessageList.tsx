@@ -38,8 +38,8 @@ const MessageList = () => {
 			{/* Message List Section header */}
 			<div className="bg-white p-4 rounded-md">
 				<div className="flex justify-between items-center">
-					<div className="flex flex-col items-start">
-						<h2 className="capitalize font-bold text-2xl text-jodnaPurpleText">
+					<div className="-mb-2">
+						<h2 className="capitalize font-bold text-xl text-jodnaPurpleText">
 							Messages
 						</h2>
 					</div>

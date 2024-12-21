@@ -29,7 +29,7 @@ const CurrentFoodsMenu = () => {
 			<div className="bg-white p-4 rounded-md">
 				<div className="flex justify-between items-center">
 					<div className="flex flex-col items-start">
-						<h2 className="capitalize font-bold text-2xl text-jodnaPurpleText">
+						<h2 className="capitalize font-bold text-xl text-jodnaPurpleText">
 							Current Foods Menu
 						</h2>
 					</div>

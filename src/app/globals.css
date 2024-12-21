@@ -39,3 +39,8 @@
 	background-color: #fcc43e !important;
 	border-radius: 50% !important;
 }
+/* MessageCard paragraph for time: 12:45PM */
+
+.flex-item-right {
+	margin-left: auto; /* Push the element to the right */
+}

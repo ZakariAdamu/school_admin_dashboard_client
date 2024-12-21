@@ -51,11 +51,11 @@ const RecentStudents = () => {
 			{/* Recent Students section header */}
 			<div className="bg-white p-4 rounded-md">
 				<div className="flex justify-between items-center">
-					<div className="flex flex-col items-start">
-						<h2 className="capitalize font-bold text-2xl text-jodnaPurpleText">
+					<div className="flex flex-col items-start -mb-2">
+						<h2 className="capitalize font-bold text-xl text-jodnaPurpleText">
 							Recent Students
 						</h2>
-						<p className="text-sm font-semibold student-total">
+						<p className="text-xs text-jodnaGray2 font-semibold student-total">
 							You have 456 students
 						</p>
 					</div>

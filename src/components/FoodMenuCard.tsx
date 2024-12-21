@@ -17,11 +17,11 @@ const FoodMenuCard = ({ menu }: FoodMenuCardProps) => {
 						alt="user avatar"
 					/> */}
 				</div>
-				<div className="flex flex-col items-start justify-center -ml-3">
-					<h2 className="capitalize text-lg font-semibold ">{menu.title}</h2>
-					<h1 className="text-sm font-medium text-jodnaGray2">
+				<div className="flex flex-col items-start justify-center mr-auto">
+					<h2 className="capitalize text-sm font-semibold ">{menu.title}</h2>
+					<p className="text-xs font-medium text-jodnaGray2">
 						{menu.description}
-					</h1>
+					</p>
 				</div>
 			</div>
 		</>

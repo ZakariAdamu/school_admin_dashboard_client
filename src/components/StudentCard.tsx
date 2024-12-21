@@ -18,14 +18,16 @@ const StudentCard = ({ student }: StudentCardProps) => {
 					/>
 				</div>
 				<div className="flex flex-col items-start justify-center">
-					<h2 className="capitalize text-lg font-semibold ">
+					<h2 className="capitalize text-sm font-semibold ">
 						{student.fullName}
 					</h2>
-					<h1 className="text-sm font-medium text-gray-500">{student.class}</h1>
+					<h1 className="text-xs font-medium text-jodnaGray2">
+						{student.class}
+					</h1>
 				</div>
 			</div>
-			<div className="pr-1">
-				<Image src={student.icon} width={40} height={40} alt="" />
+			<div className="">
+				<Image src={student.icon} width={40} height={40} alt="mail icon" />
 			</div>
 		</div>
 	);
