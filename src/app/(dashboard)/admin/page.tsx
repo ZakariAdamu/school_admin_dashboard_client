@@ -12,7 +12,7 @@ const AdminPage = () => {
 	return (
 		<div className="p-4 w-full flex gap-4 flex-col md:flex-row ">
 			{/*** LEFT ***/}
-			<div className="w-full lg:w-2/3 flex flex-col bg-[#e2eceb] bg-cover -mt-4 -ml-4 pt-9 p-4 gap-8">
+			<div className="w-full lg:w-3/4 flex flex-col bg-[#e2eceb] bg-cover -mt-4 -ml-4 pt-9 p-4 gap-8">
 				{/** HEADERS **/}
 				<div className="flex justify-between items-center">
 					{/* Page Title */}
@@ -55,8 +55,7 @@ const AdminPage = () => {
 				</div>
 			</div>
 			{/* RIGHT */}
-			<div className="w-full lg:w-1/3 flex flex-col gap-8 bg-white">
-		
+			<div className="w-full lg:w-1/4 flex flex-col gap-8 bg-white">
 				<TopBar />
 				<Announcements />
 			</div>

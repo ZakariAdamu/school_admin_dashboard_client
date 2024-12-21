@@ -17,15 +17,15 @@ const MessageCard = ({ message }: MessageCardProps) => {
 						alt="user avatar"
 					/>
 				</div>
-				<div className="flex flex-col items-start justify-center -ml-3">
-					<h2 className="capitalize text-lg font-semibold ">
+				<div className="flex flex-col items-start justify-center">
+					<h2 className="capitalize text-base font-semibold ">
 						{message.fullName}
 					</h2>
 					<h1 className="text-sm font-medium text-jodnaGray2">
 						{message.messageBody}
 					</h1>
 				</div>
-				<div className="pr-1 -mt-7 text-jodnaGray2">
+				<div className="text-xs block mx-auto -mt-7 text-jodnaGray2">
 					<p className="">12:45 PM</p>
 				</div>
 			</div>
