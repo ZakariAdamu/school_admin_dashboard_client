@@ -6,7 +6,7 @@ interface StudentCardProps {
 
 const StudentCard = ({ student }: StudentCardProps) => {
 	return (
-		<div className="flex justify-between items-center my-3">
+		<div className="flex justify-between items-center overflow-scroll scrollbar-hide my-3">
 			<div className="flex">
 				<div className="rounded-full p-3">
 					<Image

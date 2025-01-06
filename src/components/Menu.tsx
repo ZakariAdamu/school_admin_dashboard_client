@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 const menuItems = [
 	{
-		icon: "/home.png",
+		icon: "/Home.png",
 		label: "Dashboard",
 		href: "/admin",
 		visible: ["admin", "teacher", "student"],
@@ -65,19 +65,19 @@ const Menu = () => {
 	const pathname = usePathname();
 
 	return (
-		<div className="mt-7 text-sm ml-8 w-full">
+		<div className="mt-7 flex flex-col text-sm ml-8">
 			{menuItems.map((item) => (
 				<Link
 					href={item.href}
 					key={item.label}
-					className={`flex items-center hover:bg-white hover:rounded-l-full hover:text-jodnaPurple1 justify-center lg:justify-start gap-4 my-3 py-2 px-4 ${
+					className={`flex items-center justify-center menu-item lg:justify-start gap-4 hover:bg-white hover:rounded-l-full hover:text-jodnaPurple1 -ml-3 my-3 py-2 md:px-2 ${
 						pathname === item.href && "active rounded rounded-l-full"
 					} `}
 				>
 					<Image
 						src={item.icon}
 						alt="menu-icon"
-						width={30}
+						width={20}
 						height={20}
 						className="icon"
 					/>

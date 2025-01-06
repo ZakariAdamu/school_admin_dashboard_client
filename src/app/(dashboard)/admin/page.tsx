@@ -10,17 +10,18 @@ import TopBar from "@/components/TopBar";
 
 const AdminPage = () => {
 	return (
-		<div className="p-4 w-full flex gap-4 flex-col md:flex-row ">
+		// <div className="p-4 w-full flex gap-4 flex-col md:flex-row">
+		<div className="p-4 w-full flex gap-4 flex-col md:flex-row">
 			{/*** LEFT ***/}
-			<div className="w-full lg:w-3/4 flex flex-col bg-[#e2eceb] bg-cover -mt-4 -ml-4 pt-9 p-4 gap-8">
+			<div className="w-full lg:w-2/3 flex flex-col bg-[#e2eceb] bg-cover -mt-4 -ml-4 pt-9 p-4 gap-8">
 				{/** HEADERS **/}
-				<div className="flex justify-between items-center">
+				<div className="flex justify-between">
 					{/* Page Title */}
-					<div className="hidden md:flex items-center font-bold text-3xl text-jodnaPurple1 px-2">
+					<div className="md:flex items-center font-bold text-3xl text-jodnaPurple1 px-2">
 						<h2>Dashboard</h2>
 					</div>
 					{/* Search Bar*/}
-					<div className="hidden md:flex items-center bg-white justify-end gap-2 ml-[10rem] text-xs rounded-full ring-[1.5px] ring-white px-2">
+					<div className="hidden md:flex items-center bg-white justify-end gap-2 ml-[7rem] text-xs rounded-full ring-[1.5px] ring-white px-2">
 						<Image src="/search.png" alt="search-icon" width={14} height={14} />
 						<input
 							type="text"
@@ -31,9 +32,9 @@ const AdminPage = () => {
 				</div>
 				{/* MIDDLE: First row */}
 				{/* User Cards */}
-				<div className="flex gap-2 justify-between">
-					<UserCard />
-				</div>
+				{/* <div className="flex gap-2 justify-between flex-wrap"> */}
+				<UserCard />
+				{/* </div> */}
 
 				{/* MIDDLE: Second row */}
 				{/* School performance Charts */}
@@ -55,7 +56,7 @@ const AdminPage = () => {
 				</div>
 			</div>
 			{/* RIGHT */}
-			<div className="w-full lg:w-1/4 flex flex-col gap-8 bg-white">
+			<div className="w-full lg:w-1/3 flex flex-col gap-8 bg-white ">
 				<TopBar />
 				<Announcements />
 			</div>

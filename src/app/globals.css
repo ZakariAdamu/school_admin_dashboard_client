@@ -44,3 +44,23 @@
 .flex-item-right {
 	margin-left: auto; /* Push the element to the right */
 }
+
+/* ======== MEDIA QUERIES ========== */
+@media (width <= 602px) {
+	.users .user:nth-child(4) {
+		margin-right: 16px;
+	}
+}
+
+@media (width <= 1112px) {
+	.logo span {
+		font-weight: 600;
+		font-size: 15px;
+	}
+}
+@media (width <= 1052px) {
+	/* menu: latest activity */
+	.menu-item:nth-child(9) {
+		gap: 10px;
+	}
+}

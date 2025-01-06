@@ -5,11 +5,11 @@ import CurrentFoodsMenu from "./CurrentFoodsMenu";
 
 const Announcements = () => {
 	return (
-		<>
+		<div className="">
 			<RecentStudents />
 			<Messages />
 			<CurrentFoodsMenu />
-		</>
+		</div>
 	);
 };
 

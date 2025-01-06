@@ -6,7 +6,10 @@ interface UserTypeProps {
 
 const UserCard = ({ user }: UserTypeProps) => {
 	return (
-		<div key={user.label} className="flex justify-center gap-3 items-center">
+		<div
+			key={user.label}
+			className="flex justify-center gap-3 items-center user"
+		>
 			<div className={`${user.backgroundColor} rounded-full p-3`}>
 				<Image
 					src={user.icon}
