@@ -34,7 +34,7 @@ const usersData = [
 
 const DashboardSummary = () => {
 	return (
-		<div className="users rounded-2xl bg-white flex items-center justify-between py-10 flex-wrap px-4 gap-6">
+		<div className="users rounded-2xl bg-white flex items-center justify-between py-10 flex-wrap px-2 gap-6">
 			{usersData.map((user: UserType) => (
 				<UserCard key={user._id} user={user} />
 			))}

@@ -6,7 +6,7 @@ interface StudentCardProps {
 
 const StudentCard = ({ student }: StudentCardProps) => {
 	return (
-		<div className="flex justify-between items-center overflow-scroll scrollbar-hide my-3">
+		<div className="flex justify-between items-center -ml-3">
 			<div className="flex">
 				<div className="rounded-full p-3">
 					<Image
@@ -26,7 +26,7 @@ const StudentCard = ({ student }: StudentCardProps) => {
 					</h1>
 				</div>
 			</div>
-			<div className="">
+			<div className="hover:cursor-pointer">
 				<Image src={student.icon} width={40} height={40} alt="mail icon" />
 			</div>
 		</div>

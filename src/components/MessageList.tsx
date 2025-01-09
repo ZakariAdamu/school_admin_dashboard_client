@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MessageCard from "./MessageCard";
+import CTAButton from "./CTAButton";
 
 const messageList = [
 	{
@@ -36,7 +37,7 @@ const MessageList = () => {
 	return (
 		<>
 			{/* Message List Section header */}
-			<div className="bg-white p-4 rounded-md">
+			<div className="bg-white p-4 rounded-md min-w-[300px]">
 				<div className="flex justify-between items-center">
 					<div className="-mb-2">
 						<h2 className="capitalize font-bold text-xl text-jodnaPurpleText">
@@ -50,9 +51,7 @@ const MessageList = () => {
 					{messageList.map((message: MessageListType) => (
 						<MessageCard key={message._id} message={message} />
 					))}
-					<button className="block w-full max-w-[335px] mt-7 mx-auto capitalize text-lg font-bold text-jodnaPurpleText bg-jodnaBgButton px-2 py-4 rounded-full hover:bg-slate-300">
-						view more
-					</button>
+					<CTAButton />
 				</div>
 			</div>
 		</>

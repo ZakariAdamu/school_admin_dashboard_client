@@ -23,7 +23,7 @@ type MessageListType = {
 };
 type FoodMenuType = {
 	_id: string;
-	image?: string;
+	image: string;
 	title: string;
 	description: string;
 };

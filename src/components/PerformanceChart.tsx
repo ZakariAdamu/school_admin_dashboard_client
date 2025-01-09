@@ -92,14 +92,14 @@ const data = [
 
 const PerformanceChart = () => {
 	return (
-		<div className="bg-white rounded-xl w-full h-full pt-4 px-4 pb-10">
+		<div className="bg-white rounded-xl min-w-[300px] overflow-scroll scrollbar-hide h-full md:h-fit min-h[600px] lg:h-full xl:h-fit pt-4 px-4 ">
 			{/* TITLE */}
 			<div className="flex justify-between items-center mb-5">
 				<h1 className="text-lg font-semibold text-jodnaPurple1">
 					School Performance
 				</h1>
 				{/* Data Summary */}
-				<div className="flex m-2 justify-between gap-5">
+				<div className="flex justify-between gap-5">
 					{weeklyPerformanceData.map((week) => (
 						<div
 							key={week.label}
@@ -137,7 +137,11 @@ const PerformanceChart = () => {
 						bottom: 5,
 					}}
 				>
-					<CartesianGrid strokeDasharray="1 1" horizontal={false} stroke="#ddd" />
+					<CartesianGrid
+						strokeDasharray="1 1"
+						horizontal={false}
+						stroke="#ddd"
+					/>
 					<XAxis
 						dataKey="name"
 						axisLine={false}

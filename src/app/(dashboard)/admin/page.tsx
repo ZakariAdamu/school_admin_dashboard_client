@@ -7,13 +7,13 @@ import UserCard from "@/components/DashboardSummary";
 import Image from "next/image";
 import React from "react";
 import TopBar from "@/components/TopBar";
+import UnpaidStudentTuition from "../list/students/UnpaidStudentInTuition";
 
 const AdminPage = () => {
 	return (
-		// <div className="p-4 w-full flex gap-4 flex-col md:flex-row">
-		<div className="p-4 w-full flex gap-4 flex-col md:flex-row">
+		<div className="w-full bg-[#e2eceb]  flex gap-4 flex-col md:flex-row">
 			{/*** LEFT ***/}
-			<div className="w-full lg:w-2/3 flex flex-col bg-[#e2eceb] bg-cover -mt-4 -ml-4 pt-9 p-4 gap-8">
+			<div className="w-full lg:w-2/3 flex flex-col bg-cover -mt-4 mx-auto pt-9 px-5 pl-7 gap-8">
 				{/** HEADERS **/}
 				<div className="flex justify-between">
 					{/* Page Title */}
@@ -54,9 +54,13 @@ const AdminPage = () => {
 						<FinanceChart />
 					</div>
 				</div>
+				{/* MIDDLE: Fourth row*/}
+				<div className="">
+					<UnpaidStudentTuition />
+				</div>
 			</div>
 			{/* RIGHT */}
-			<div className="w-full lg:w-1/3 flex flex-col gap-8 bg-white ">
+			<div className="md:w-fit lg:w-1/3 flex flex-col gap-8 bg-white min-w-[370px] mx-7  overflow-scroll px-5 md:mx-0 scrollbar-hide rounded-lg md:rounded-none">
 				<TopBar />
 				<Announcements />
 			</div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import StudentCard from "./StudentCard";
+import CTAButton from "./CTAButton";
 
 let viewedProfile;
 const recentStudents = [
@@ -49,7 +50,7 @@ const RecentStudents = () => {
 	return (
 		<>
 			{/* Recent Students section header */}
-			<div className="bg-white p-4 rounded-md">
+			<div className="bg-white py-4 px-5 rounded-md min-w-[300px]">
 				<div className="flex justify-between items-center">
 					<div className="flex flex-col items-start -mb-2">
 						<h2 className="capitalize font-bold text-xl text-jodnaPurpleText">
@@ -69,9 +70,7 @@ const RecentStudents = () => {
 					{recentStudents.map((student: StudentType) => (
 						<StudentCard key={student._id} student={student} />
 					))}
-					<button className="block w-full max-w-[335px] mt-7 mx-auto capitalize text-lg font-bold text-jodnaPurpleText bg-jodnaBgButton px-2 py-4 rounded-full hover:bg-slate-300">
-						view more
-					</button>
+					<CTAButton />
 				</div>
 			</div>
 		</>
