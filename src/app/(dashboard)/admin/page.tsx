@@ -7,7 +7,8 @@ import UserCard from "@/components/DashboardSummary";
 import Image from "next/image";
 import React from "react";
 import TopBar from "@/components/TopBar";
-import UnpaidStudentTuition from "../list/students/UnpaidStudentInTuition";
+import UnpaidStudentTuition from "../(list)/students/UnpaidStudentInTuition";
+import SearchField from "@/components/SearchField";
 
 const AdminPage = () => {
 	return (
@@ -17,17 +18,12 @@ const AdminPage = () => {
 				{/** HEADERS **/}
 				<div className="flex justify-between">
 					{/* Page Title */}
-					<div className="md:flex items-center font-bold text-3xl text-jodnaPurple1 px-2">
+					<div className="font-bold text-3xl text-jodnaPurple1 px-2">
 						<h2>Dashboard</h2>
 					</div>
 					{/* Search Bar*/}
-					<div className="hidden md:flex items-center bg-white justify-end gap-2 ml-[7rem] text-xs rounded-full ring-[1.5px] ring-white px-2">
-						<Image src="/search.png" alt="search-icon" width={14} height={14} />
-						<input
-							type="text"
-							placeholder="Search here..."
-							className="w-[200px] p-2 outline-none"
-						/>
+					<div className="flex items-center bg-white justify-end gap-2 md:ml-[7rem]  text-xs rounded-full ring-[1.5px] ring-white px-2">
+						<SearchField />
 					</div>
 				</div>
 				{/* MIDDLE: First row */}

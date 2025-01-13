@@ -1,6 +1,11 @@
+import AddButton from "@/components/AddButton";
 import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
+import SearchField from "@/components/SearchField";
+import SelectButton from "@/components/SelectButton";
 import Table from "@/components/Table";
+import TopBar from "@/components/TopBar";
+// import TableSearch from "@/components/TableSearch";
 import { role, studentsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
@@ -43,11 +48,11 @@ const columns = [
 	},
 ];
 
-const UnpaidStudentTuition = () => {
+const StudentsListPage = () => {
 	const renderRow = (item: Student) => (
 		<tr
 			key={item.id}
-			className="text-sm hover:bg-aishubPurpleLight   rounded-3xl py-2 px-4 min-w-[300px]"
+			className="text-sm hover:bg-aishubPurpleLight  rounded-3xl py-2 px-4 min-w-[300px]"
 		>
 			<td className="flex items-center gap-4 p-4">
 				<Image
@@ -86,21 +91,47 @@ const UnpaidStudentTuition = () => {
 		</tr>
 	);
 	return (
-		<div className="bg-white p-4 flex flex-col items-center mx-auto min-w-[300px] overflow-scroll scrollbar-hide  rounded-md">
-			{/* TOP */}
-			{/* <div className="flex items-center justify-between mb-3 mt-2 lg:ml-6 xl:ml-10 2xl:ml-14"> */}
-			<h2 className="text-jodnaPurple1 text-lg font-bold min-w-fit w-[550px] mx-auto mt-2">
-				Unpaid Student in Tuition
-			</h2>
-			{/* </div> */}
-			{/* LIST */}
-			<div className="mt-4 min-w-[300px] w-[600px] overflow-scroll scrollbar-hide mx-auto">
-				<Table columns={columns} renderRow={renderRow} data={studentsData} />
-				{/* PAGINATION */}
-				<Pagination />
+		<>
+			<div className="flex flex-col w-full h-full bg-[#e2eceb] gap-4">
+				{/* TOP */}
+				<div className="flex items-center mx-5 mt-[2px] justify-between">
+					{/* Top Left */}
+					<div className="flex flex-col items-start justify-center gap-4 mt-[18px] md:gap-8 md:mt-0 md:-mb-4">
+						<h2 className="font-bold text-xl md:text-3xl text-jodnaPurple1">
+							Students
+						</h2>
+						<div className="flex items-center bg-white justify-end gap-1 text-xs rounded-full ring-[1.5px] ring-white px-2">
+							<SearchField />
+						</div>
+					</div>
+					{/* Top Right */}
+					<div className="flex flex-col items-end justify-center gap-4">
+						<div className="hidden md:flex">
+							<TopBar />
+						</div>
+						<div className="flex items-center gap-4 self-end">
+							<SelectButton />
+
+							{role === "admin" && (
+								<div className="hidden md:flex">
+									<AddButton />
+								</div>
+								// change FormModal component below to FormField
+								// <FormModal table="student" type="create" />
+							)}
+						</div>
+					</div>
+				</div>
+				<div className="bg-white p-4 rounded-md  mx-5 mt-4 min-w-[300px] w-[600px] overflow-scroll scrollbar-hide">
+					{/* Next Section */}
+					{/* LIST */}
+					<Table columns={columns} renderRow={renderRow} data={studentsData} />
+					{/* PAGINATION */}
+					<Pagination />
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
-export default UnpaidStudentTuition;
+export default StudentsListPage;

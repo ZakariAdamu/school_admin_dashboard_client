@@ -70,7 +70,7 @@ const Menu = () => {
 				<Link
 					href={item.href}
 					key={item.label}
-					className={`flex items-center justify-center menu-item lg:justify-start gap-4 hover:bg-white hover:rounded-l-full hover:text-jodnaPurple1 -ml-3 my-3 py-2 md:px-2 ${
+					className={`flex items-center justify-center menu-item lg:justify-start gap-4 hover:bg-white hover:rounded-l-full hover:text-jodnaPurple1 -ml-3 my-1 py-2 md:px-2 ${
 						pathname === item.href && "active rounded rounded-l-full"
 					} `}
 				>
