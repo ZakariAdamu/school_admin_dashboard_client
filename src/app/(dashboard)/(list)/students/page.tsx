@@ -1,3 +1,4 @@
+"use client";
 import AddButton from "@/components/AddButton";
 import FormModal from "@/components/FormModal";
 import Pagination from "@/components/Pagination";
@@ -5,86 +6,166 @@ import SearchField from "@/components/SearchField";
 import SelectButton from "@/components/SelectButton";
 import Table from "@/components/Table";
 import TopBar from "@/components/TopBar";
-// import TableSearch from "@/components/TableSearch";
 import { role, studentsData } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 type Student = {
 	id: number;
 	studentId: string;
+	checked: boolean;
 	name: string;
 	photo: string;
 	class: string;
+	city: string;
+	contact: string;
+	grade: string;
 	icon: string;
+	iconTwo?: string;
+	action: string;
 	amount: string;
+	date: string;
+	parentName: string;
+	address: string;
+	backgroundColor?: string;
 };
 
-const columns = [
-	{
-		header: "Student Name",
-		accessor: "studentName",
-		className: "hidden",
-	},
-	{
-		header: "Student ID",
-		accessor: "studentId",
-		className: "hidden",
-	},
-	{
-		header: "Class",
-		accessor: "class",
-		className: "hidden",
-	},
-	{
-		header: "Amount",
-		accessor: "amount",
-		className: "hidden",
-	},
-	{
-		header: "Actions",
-		accessor: "actions",
-		className: "hidden",
-	},
-];
-
 const StudentsListPage = () => {
-	const renderRow = (item: Student) => (
+	// State to manage the table data
+	const [tableData, setTableData] = useState(studentsData);
+
+	// Function to handle row click
+	const handleRowClick = (id: number) => {
+		setTableData((prevData) =>
+			prevData.map((item) =>
+				item.id === id ? { ...item, checked: !item.checked } : item
+			)
+		);
+	};
+
+	// For the Column header
+	// const [isChecked, setIsChecked] = useState(false);
+
+	// const handleRowClick = () => {
+	// 	setIsChecked((prev) => !prev); // Toggle the checkbox
+	// };
+
+	// Column headers
+	const columns = [
+		{
+			header: (
+				<td className="p-4">
+					<input type="checkbox" />
+				</td>
+			),
+			accessor: "studentRow",
+			className: "hover:cursor-pointer",
+		},
+		{
+			header: "Name",
+			accessor: "studentName",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "ID",
+			accessor: "studentId",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "Date",
+			accessor: "class",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "Parent Name",
+			accessor: "amount",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "City",
+			accessor: "amount",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "Contact",
+			accessor: "amount",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "Grade",
+			accessor: "amount",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+		{
+			header: "Action",
+			accessor: "actions",
+			className:
+				"hover:cursor-pointer px-6 py-3 text-left text-xs font-medium text-jodnaPurple2 capitalize tracking-wider",
+		},
+	];
+
+	const renderRow = (row: Student) => (
 		<tr
-			key={item.id}
-			className="text-sm hover:bg-aishubPurpleLight  rounded-3xl py-2 px-4 min-w-[300px]"
+			key={row.id}
+			className=" hover:bg-aishubPurpleLight  rounded-sm  border-t odd:border-l-4 border-l-jodnaPurple2 odd:border-r"
+			onClick={() => handleRowClick(row.id)}
 		>
-			<td className="flex items-center gap-4 p-4">
+			<td className="px-6 py-4 whitespace-nowrap">
+				<input
+					type="checkbox"
+					checked={row.checked}
+					onChange={() => handleRowClick(row.id)}
+				/>
+			</td>
+			<td className="px-3 mr-5 flex items-center gap-3 py-4 whitespace-nowrap">
 				<Image
-					src={item.photo}
+					src={row.photo}
 					alt=""
 					width={20}
 					height={20}
-					className="block w-10 h-10 rounded-full object-cover"
+					className=" w-10 h-10 rounded-full object-cover"
 				/>
-				<span className="font-semibold text-jodnaPurple1">{item.name}</span>
+				<span className="font-bold text-sm text-jodnaPurple1">{row.name}</span>
 			</td>
-			<td className="text-jodnaPurple1 px-2">{item.studentId}</td>
-			<td className="flex items-center gap-4 px-5">
-				<Image
-					src={item.icon}
-					alt=""
-					width={10}
-					height={10}
-					className="w-8 h-8 rounded-full object-cover p-2 bg-jodnaRed text-white"
-				/>
-				<div className="flex flex-col -ml-2">
-					<h3 className="font-semibold text-jodnaGray1">class</h3>
-					<p className="text-xs text-gray-500">{item.class}</p>
+			<td className="px-6 py-4 whitespace-nowrap text-sm">{row.studentId}</td>
+			<td className="px-6 py-4 whitespace-nowrap text-sm">
+				<span>{row.date}</span>
+			</td>
+			<td className="px-6 py-4 whitespace-nowrap text-sm">{row.parentName}</td>
+			<td className="px-6 py-4 whitespace-nowrap text-sm">{row.city}</td>
+
+			<td className="px-6 py-4 whitespace-nowrap">
+				{/* action buttons div for contact */}
+				<div className="flex items-center gap-2">
+					<button className="flex items-center justify-center w-7 h-7 bg-gray-200 hover:bg-gray-300 rounded-full">
+						<Image src={row.contact} width={16} height={16} alt="" />
+					</button>
+					<button className="flex items-center justify-center w-7 h-7 bg-gray-200 hover:bg-gray-300 rounded-full">
+						<Image src="/Email.png" width={16} height={16} alt="" />
+					</button>
 				</div>
 			</td>
-			<td className="px-4">{item.amount}</td>
-			<td className="px-2">
-				{/* action buttons div */}
+			<td className="px-6 py-4 whitespace-nowrap">
+				<span
+					className={`${row.backgroundColor} flex items-center justify-center w-7 h-7 bg-gray-200 text-white rounded-2xl text-xs px-7`}
+				>
+					{row.class}
+				</span>
+			</td>
+
+			<td className="px-6 py-4 whitespace-nowrap">
+				{/* action button div */}
 				<div className="flex items-center gap-2">
-					<FormModal table="unpaidStudent" type="print" data={item} />
 					{role === "admin" && (
-						<FormModal table="unpaidStudent" type="more" id={item.id} />
+						<FormModal table="student" type="more" id={row.id} />
 					)}
 				</div>
 			</td>
@@ -94,7 +175,7 @@ const StudentsListPage = () => {
 		<>
 			<div className="flex flex-col w-full h-full bg-[#e2eceb] gap-4">
 				{/* TOP */}
-				<div className="flex items-center mx-5 mt-[2px] justify-between">
+				<div className="flex items-center w-[94%] xl:w-[87%] 2xl:w-[80%] mx-5 lg:mx-auto mt-[2px] justify-between">
 					{/* Top Left */}
 					<div className="flex flex-col items-start justify-center gap-4 mt-[18px] md:gap-8 md:mt-0 md:-mb-4">
 						<h2 className="font-bold text-xl md:text-3xl text-jodnaPurple1">
@@ -106,10 +187,10 @@ const StudentsListPage = () => {
 					</div>
 					{/* Top Right */}
 					<div className="flex flex-col items-end justify-center gap-4">
-						<div className="hidden md:flex">
+						<div className="hidden md:block -mr-3">
 							<TopBar />
 						</div>
-						<div className="flex items-center gap-4 self-end">
+						<div className="flex items-center gap-4">
 							<SelectButton />
 
 							{role === "admin" && (
@@ -122,10 +203,15 @@ const StudentsListPage = () => {
 						</div>
 					</div>
 				</div>
-				<div className="bg-white p-4 rounded-md  mx-5 mt-4 min-w-[300px] w-[600px] overflow-scroll scrollbar-hide">
-					{/* Next Section */}
-					{/* LIST */}
-					<Table columns={columns} renderRow={renderRow} data={studentsData} />
+				{/* Next Section */}
+				{/* LIST */}
+				<div className="bg-white p-4 rounded-md  lg:mx-auto mt-4 min-w-[400px] w-[94%] mx-3 xl:w-[87%] 2xl:w-[80%] overflow-scroll scrollbar-hide">
+					<Table
+						columns={columns}
+						renderRow={renderRow}
+						tableData={tableData}
+						handleRowClick={handleRowClick}
+					/>
 					{/* PAGINATION */}
 					<Pagination />
 				</div>

@@ -44,25 +44,25 @@ const columns = [
 ];
 
 const UnpaidStudentTuition = () => {
-	const renderRow = (item: Student) => (
+	const renderRow = (row: Student) => (
 		<tr
-			key={item.id}
+			key={row.id}
 			className="text-sm hover:bg-aishubPurpleLight  rounded-3xl py-2 px-4 min-w-[300px]"
 		>
 			<td className="flex items-center gap-4 p-4">
 				<Image
-					src={item.photo}
+					src={row.photo}
 					alt=""
 					width={20}
 					height={20}
 					className="block w-10 h-10 rounded-full object-cover"
 				/>
-				<span className="font-semibold text-jodnaPurple1">{item.name}</span>
+				<span className="font-semibold text-jodnaPurple1">{row.name}</span>
 			</td>
-			<td className="text-jodnaPurple1 px-2">{item.studentId}</td>
+			<td className="text-jodnaPurple1 px-2">{row.studentId}</td>
 			<td className="flex items-center gap-4 px-5">
 				<Image
-					src={item.icon}
+					src={row.icon}
 					alt=""
 					width={10}
 					height={10}
@@ -70,16 +70,16 @@ const UnpaidStudentTuition = () => {
 				/>
 				<div className="flex flex-col -ml-2">
 					<h3 className="font-semibold text-jodnaGray1">class</h3>
-					<p className="text-xs text-gray-500">{item.class}</p>
+					<p className="text-xs text-gray-500">{row.class}</p>
 				</div>
 			</td>
-			<td className="px-4">{item.amount}</td>
+			<td className="px-4">{row.amount}</td>
 			<td className="px-2">
 				{/* action buttons div */}
 				<div className="flex items-center gap-2">
-					<FormModal table="unpaidStudent" type="print" data={item} />
+					<FormModal table="unpaidStudent" type="print" data={row} />
 					{role === "admin" && (
-						<FormModal table="unpaidStudent" type="more" id={item.id} />
+						<FormModal table="unpaidStudent" type="more" id={row.id} />
 					)}
 				</div>
 			</td>
@@ -88,14 +88,16 @@ const UnpaidStudentTuition = () => {
 	return (
 		<div className="bg-white p-4 flex flex-col items-center mx-auto min-w-[300px] overflow-scroll scrollbar-hide  rounded-md">
 			{/* TOP */}
-			{/* <div className="flex items-center justify-between mb-3 mt-2 lg:ml-6 xl:ml-10 2xl:ml-14"> */}
 			<h2 className="text-jodnaPurple1 text-lg font-bold min-w-fit w-[550px] mx-auto mt-2">
 				Unpaid Student in Tuition
 			</h2>
-			{/* </div> */}
 			{/* LIST */}
 			<div className="mt-4 min-w-[300px] w-[600px] overflow-scroll scrollbar-hide mx-auto">
-				<Table columns={columns} renderRow={renderRow} data={studentsData} />
+				<Table
+					columns={columns}
+					renderRow={renderRow}
+					tableData={studentsData}
+				/>
 				{/* PAGINATION */}
 				<Pagination />
 			</div>

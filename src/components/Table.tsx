@@ -1,16 +1,22 @@
 const Table = ({
 	columns,
 	renderRow,
-	data,
+	tableData,
+	handleRowClick,
 }: {
-	columns: { header: string; accessor: string; className?: string }[];
+	columns: {
+		header: string | React.ReactNode;
+		accessor: string;
+		className?: string;
+	}[];
 	renderRow: (item: any) => React.ReactNode;
-	data: any[];
+	tableData: any[];
+	handleRowClick?: (id: number) => void;
 }) => {
 	return (
 		<table className="">
-			<thead>
-				<tr className="text-left text-gray-500 text-sm">
+			<thead className="">
+				<tr>
 					{columns.map((col) => (
 						<th key={col.accessor} className={col.className}>
 							{col.header}
@@ -18,7 +24,7 @@ const Table = ({
 					))}
 				</tr>
 			</thead>
-			<tbody className="">{data.map((item) => renderRow(item))}</tbody>
+			<tbody className="">{tableData.map((row) => renderRow(row))}</tbody>
 		</table>
 	);
 };
