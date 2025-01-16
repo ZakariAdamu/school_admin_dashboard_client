@@ -14,7 +14,7 @@ const Table = ({
 	handleRowClick?: (id: number) => void;
 }) => {
 	return (
-		<table className="">
+		<table className="xl:mx-3 table">
 			<thead className="">
 				<tr>
 					{columns.map((col) => (

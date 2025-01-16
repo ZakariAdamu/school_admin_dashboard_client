@@ -6,8 +6,7 @@
 	background-color: #e2eceb;
 } */
 .icon {
-	filter: brightness(0) saturate(0%) invert(70%) sepia(0%) saturate(0%)
-		brightness(100%) contrast(90%);
+	filter: brightness(0) saturate(0%) invert(70%) sepia(0%) saturate(0%) brightness(100%) contrast(90%);
 }
 
 /* active class for the left-side menu items */
@@ -16,12 +15,15 @@
 	background-color: #e2eceb;
 	transition: background-color 0.3s, color 0.3s;
 }
+
 .react-calendar {
 	align-self: center !important;
 	border: none !important;
-	width: auto !important; /* width: auto also allows the content fits its parent container*/
+	width: auto !important;
+	/* width: auto also allows the content fits its parent container*/
 	line-height: 1.8rem !important;
 }
+
 .react-calendar__tile {
 	font-size: 1rem !important;
 	width: 50px !important;
@@ -29,38 +31,51 @@
 	padding-left: 2px !important;
 	padding-right: 2px !important;
 }
+
 .react-calendar__tile--active {
 	background-color: #303972 !important;
 	border-radius: 50% !important;
 	padding: 10px !important;
 	/* font-size: 1.9em !important; */
 }
+
 .react-calendar__tile--now {
 	background-color: #fcc43e !important;
 	border-radius: 50% !important;
 }
+
 /* MessageCard paragraph for time: 12:45PM */
 
 .flex-item-right {
-	margin-left: auto; /* Push the element to the right */
+	margin-left: auto;
+	/* Push the element to the right */
 }
 
 /* ======== MEDIA QUERIES ========== */
-@media (width <= 602px) {
+@media (width <=602px) {
 	.users .user:nth-child(4) {
 		margin-right: 16px;
 	}
 }
 
-@media (width <= 1112px) {
+@media (width <=1112px) {
 	.logo span {
 		font-weight: 600;
 		font-size: 15px;
 	}
 }
-@media (width <= 1052px) {
+
+@media (width <=1052px) {
+
 	/* menu: latest activity */
 	.menu-item:nth-child(9) {
 		gap: 10px;
 	}
 }
+
+/* @media (width <=1574px) {
+	.table {
+		margin-left: 0;
+		background-color: #303972;
+	}
+} */

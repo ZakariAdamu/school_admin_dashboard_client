@@ -115,7 +115,7 @@ const StudentsListPage = () => {
 	const renderRow = (row: Student) => (
 		<tr
 			key={row.id}
-			className=" hover:bg-aishubPurpleLight  rounded-sm  border-t odd:border-l-4 border-l-jodnaPurple2 odd:border-r"
+			className=" hover:bg-aishubPurpleLight rounded-sm border-t odd:border-l-4 border-l-jodnaPurple2 odd:border-r"
 			onClick={() => handleRowClick(row.id)}
 		>
 			<td className="px-6 py-4 whitespace-nowrap">
@@ -175,7 +175,7 @@ const StudentsListPage = () => {
 		<>
 			<div className="flex flex-col w-full h-full bg-[#e2eceb] gap-4">
 				{/* TOP */}
-				<div className="flex items-center w-[94%] xl:w-[87%] 2xl:w-[80%] mx-5 lg:mx-auto mt-[2px] justify-between">
+				<div className="flex items-center w-[94%] xl:w-[90%] 2xl:w-[87%] mx-5 lg:mx-auto mt-[2px] justify-between">
 					{/* Top Left */}
 					<div className="flex flex-col items-start justify-center gap-4 mt-[18px] md:gap-8 md:mt-0 md:-mb-4">
 						<h2 className="font-bold text-xl md:text-3xl text-jodnaPurple1">
@@ -205,7 +205,7 @@ const StudentsListPage = () => {
 				</div>
 				{/* Next Section */}
 				{/* LIST */}
-				<div className="bg-white p-4 rounded-md  lg:mx-auto mt-4 min-w-[400px] w-[94%] mx-3 xl:w-[87%] 2xl:w-[80%] overflow-scroll scrollbar-hide">
+				<div className="bg-white p-4 rounded-md mt-4 min-w-[400px] w-[94%] lg:w-[98%] mx-auto 2xl:w-[96%] overflow-scroll scrollbar-hide">
 					<Table
 						columns={columns}
 						renderRow={renderRow}
