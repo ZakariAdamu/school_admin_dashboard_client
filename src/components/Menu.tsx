@@ -19,44 +19,44 @@ const menuItems = [
 	{
 		icon: "/teacher.svg",
 		label: "Teachers",
-		href: "/teachers",
+		href: "/",
 		visible: ["admin", "teacher"],
 	},
 
 	{
 		icon: "/event.svg",
 		label: "Event",
-		href: "/event",
+		href: "/",
 		visible: ["admin", "teacher"],
 	},
 	{
 		icon: "/finance.svg",
 		label: "Finance",
-		href: "/finance",
+		href: "/",
 		visible: ["admin", "teacher"],
 	},
 	{
 		icon: "/food.svg",
 		label: "Food",
-		href: "/food",
+		href: "/",
 		visible: ["admin", "teacher", "student"],
 	},
 	{
 		icon: "/user.svg",
 		label: "User",
-		href: "/user",
+		href: "/",
 		visible: ["admin", "teacher", "student"],
 	},
 	{
 		icon: "/chat.svg",
 		label: "Chat",
-		href: "/chat",
+		href: "/",
 		visible: ["admin", "teacher", "student"],
 	},
 	{
 		icon: "/activity.svg",
 		label: "Latest Activity",
-		href: "/activity",
+		href: "/",
 		visible: ["admin", "teacher", "student"],
 	},
 ];
