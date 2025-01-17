@@ -92,7 +92,7 @@ const data = [
 
 const PerformanceChart = () => {
 	return (
-		<div className="bg-white rounded-xl min-w-[300px] overflow-scroll scrollbar-hide h-full md:h-fit min-h[600px] lg:h-full xl:h-fit pt-4 px-4 ">
+		<div className="bg-white rounded-xl min-w-[300px] w-full overflow-scroll scrollbar-hide pt-4 px-4 h-full ">
 			{/* TITLE */}
 			<div className="flex justify-between items-center mb-5">
 				<h1 className="text-lg font-semibold text-jodnaPurple1">
@@ -125,7 +125,7 @@ const PerformanceChart = () => {
 				</div>
 			</div>
 
-			<ResponsiveContainer width="100%" height="90%">
+			<ResponsiveContainer width="100%" height="80%">
 				<LineChart
 					width={500}
 					height={300}

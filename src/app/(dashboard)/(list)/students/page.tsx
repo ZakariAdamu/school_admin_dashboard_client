@@ -118,11 +118,15 @@ const StudentsListPage = () => {
 			className=" hover:bg-aishubPurpleLight rounded-sm border-t odd:border-l-4 border-l-jodnaPurple2 odd:border-r"
 			onClick={() => handleRowClick(row.id)}
 		>
-			<td className="px-6 py-4 whitespace-nowrap">
+			<td
+				className="px-6 py-4 whitespace-nowrap "
+				onClick={() => handleRowClick(row.id)}
+			>
 				<input
 					type="checkbox"
 					checked={row.checked}
 					onChange={() => handleRowClick(row.id)}
+					className="hover:cursor-pointer"
 				/>
 			</td>
 			<td className="px-3 mr-5 flex items-center gap-3 py-4 whitespace-nowrap">
@@ -204,7 +208,7 @@ const StudentsListPage = () => {
 					</div>
 				</div>
 				{/* Next Section */}
-				{/* LIST */}
+				{/* LIST: Students' table container div */}
 				<div className="bg-white p-4 rounded-md mt-4 min-w-[400px] w-[94%] lg:w-[98%] mx-auto 2xl:w-[96%] overflow-scroll scrollbar-hide">
 					<Table
 						columns={columns}
